@@ -50,4 +50,6 @@ describe("Ship placement", () => {
   });
 });
 
-describe("Attack reception in board", () => {});
+describe("Attack reception in board", () => {
+  gameBoard.board = horizontalPlacement;
+});
