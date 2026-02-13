@@ -51,22 +51,21 @@ describe("Ship placement", () => {
 });
 
 describe("Attack reception in board", () => {
-  const row = gameBoard.board[1];
   gameBoard.board = [0, destroyer, destroyer];
 
   test("registers hit shots", () => {
     gameBoard.receiveAttack(1, 1);
-    expect(row).toStrictEqual([0, "H", destroyer]);
+    expect(gameBoard.board).toStrictEqual([0, "H", destroyer]);
   });
 
   test("registers missed shots", () => {
     gameBoard.receiveAttack(1, 0);
-    expect(row).toStrictEqual(["M", "H", destroyer]);
+    expect(gameBoard.board).toStrictEqual(["M", "H", destroyer]);
   });
 
   test("does nothing to registered shots", () => {
     gameBoard.receiveAttack(1, 0);
-    expect(row).toStrictEqual(["M", "H", destroyer]);
+    expect(gameBoard.board).toStrictEqual(["M", "H", destroyer]);
   });
 
   test("reduces damaged ship health", () => {
