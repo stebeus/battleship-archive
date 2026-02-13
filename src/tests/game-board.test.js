@@ -23,3 +23,8 @@ describe("Board creator", () => {
 
 const gameBoard = new GameBoard();
 const destroyer = gameBoard.ships[4];
+
+const horizontalPlacement = [
+  [0, 0, 0],
+  [0, destroyer, destroyer],
+];
