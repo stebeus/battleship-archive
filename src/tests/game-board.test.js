@@ -28,3 +28,8 @@ const horizontalPlacement = [
   [0, 0, 0],
   [0, destroyer, destroyer],
 ];
+
+const verticalPlacement = [
+  [0, destroyer, 0],
+  [0, destroyer, 0],
+];
