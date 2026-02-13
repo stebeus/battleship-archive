@@ -68,4 +68,8 @@ describe("Attack reception in board", () => {
     gameBoard.receiveAttack(1, 0);
     expect(row).toStrictEqual(["M", "H", destroyer]);
   });
+
+  test("reduces damaged ship health", () => {
+    expect(destroyer.health).toBe(1);
+  });
 });
