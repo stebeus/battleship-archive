@@ -52,7 +52,7 @@ describe("Ship placement", () => {
 
 describe("Attack reception in board", () => {
   const row = gameBoard.board[1];
-  gameBoard.board = horizontalPlacement;
+  gameBoard.board = [0, destroyer, destroyer];
 
   test("registers hit shots", () => {
     gameBoard.receiveAttack(1, 1);
