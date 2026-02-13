@@ -57,17 +57,17 @@ describe("Attack reception in board", () => {
 
   test("registers hit shots", () => {
     gameBoard.receiveAttack(1, 1);
-    expect(gameBoard.board).toStrictEqual([0, "H", destroyer]);
+    expect(gameBoard.board[1]).toStrictEqual([0, "H", destroyer]);
   });
 
   test("registers missed shots", () => {
     gameBoard.receiveAttack(1, 0);
-    expect(gameBoard.board).toStrictEqual(["M", "H", destroyer]);
+    expect(gameBoard.board[1]).toStrictEqual(["M", "H", destroyer]);
   });
 
   test("does nothing to registered shots", () => {
     gameBoard.receiveAttack(1, 0);
-    expect(gameBoard.board).toStrictEqual(["M", "H", destroyer]);
+    expect(gameBoard.board[1]).toStrictEqual(["M", "H", destroyer]);
   });
 
   test("reduces damaged ship health", () => {
