@@ -3,6 +3,10 @@ class Ship {
     this.length = length;
     this.health = this.length;
   }
+
+  hit() {
+    this.health--;
+  }
 }
 
 export { Ship };
