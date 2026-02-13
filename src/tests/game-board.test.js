@@ -11,4 +11,8 @@ describe("Board creator", () => {
   test("board has 10 rows", () => {
     expect(board).toHaveLength(10);
   });
+
+  test("board has 10 columns", () => {
+    expect(board[0]).toHaveLength(10);
+  });
 });
