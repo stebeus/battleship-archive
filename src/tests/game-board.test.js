@@ -24,17 +24,17 @@ describe("Board creator", () => {
 const gameBoard = new GameBoard();
 const destroyer = gameBoard.ships[4];
 
-const horizontalPlacement = [
-  [0, 0, 0],
-  [0, destroyer, destroyer],
-];
-
-const verticalPlacement = [
-  [0, destroyer, 0],
-  [0, destroyer, 0],
-];
-
 describe("Ship placement", () => {
+  const horizontalPlacement = [
+    [0, 0, 0],
+    [0, destroyer, destroyer],
+  ];
+
+  const verticalPlacement = [
+    [0, destroyer, 0],
+    [0, destroyer, 0],
+  ];
+
   beforeEach(() => {
     gameBoard.board = createBoard(2, 3);
   });
