@@ -49,3 +49,5 @@ describe("Ship placement", () => {
     expect(gameBoard.board).toStrictEqual(verticalPlacement);
   });
 });
+
+describe("Attack reception in board", () => {});
