@@ -25,6 +25,18 @@ class GameBoard {
       new Ship(2),
     ];
   }
+
+  placeShip(ship, row, column, direction = "horizontal") {
+    for (let cell = 0; cell < ship.length; cell++) {
+      if (direction === "horizontal") {
+        this.board[row][column++] = ship;
+      }
+
+      if (direction === "vertical") {
+        this.board[row++][column] = ship;
+      }
+    }
+  }
 }
 
 export { createBoard, GameBoard };
