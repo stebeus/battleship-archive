@@ -14,4 +14,17 @@ function createBoard(rows = 1, columns = 1) {
   return board;
 }
 
-export { createBoard };
+class GameBoard {
+  constructor() {
+    this.board = createBoard(10, 10);
+    this.ships = [
+      new Ship(5),
+      new Ship(4),
+      new Ship(3),
+      new Ship(3),
+      new Ship(2),
+    ];
+  }
+}
+
+export { createBoard, GameBoard };
