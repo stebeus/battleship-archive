@@ -19,3 +19,8 @@ test("reduces ship health by one hit", () => {
 test("returns false if ship is not sunk", () => {
   expect(ship.isSunk()).toBeFalsy();
 });
+
+test("returns true if ship is sunk", () => {
+  ship.hit();
+  expect(ship.isSunk()).toBeTruthy();
+});
