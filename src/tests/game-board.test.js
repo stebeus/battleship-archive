@@ -34,11 +34,11 @@ const verticalPlacement = [
   [0, destroyer, 0],
 ];
 
-beforeEach(() => {
-  gameBoard.board = createBoard(2, 3);
-});
-
 describe("Ship placement", () => {
+  beforeEach(() => {
+    gameBoard.board = createBoard(2, 3);
+  });
+
   test("places ship horizontally by default", () => {
     gameBoard.placeShip(destroyer, 1, 1);
     expect(gameBoard.board).toStrictEqual(horizontalPlacement);
