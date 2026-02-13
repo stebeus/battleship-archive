@@ -43,4 +43,9 @@ describe("Ship placement", () => {
     gameBoard.placeShip(destroyer, 1, 1);
     expect(gameBoard.board).toStrictEqual(horizontalPlacement);
   });
+
+  test("places ship vertically", () => {
+    gameBoard.placeShip(destroyer, 0, 1, "vertical");
+    expect(gameBoard.board).toStrictEqual(verticalPlacement);
+  });
 });
