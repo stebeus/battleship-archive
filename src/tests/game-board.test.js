@@ -1,4 +1,4 @@
-import { describe, expect, test } from "vitest";
+import { beforeEach, describe, expect, test } from "vitest";
 import { createBoard, GameBoard } from "../game-board";
 
 describe("Board creator", () => {
@@ -33,3 +33,7 @@ const verticalPlacement = [
   [0, destroyer, 0],
   [0, destroyer, 0],
 ];
+
+beforeEach(() => {
+  gameBoard.board = createBoard(2, 3);
+});
