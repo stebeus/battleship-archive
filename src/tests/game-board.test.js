@@ -62,7 +62,7 @@ describe("Attack reception in board", () => {
 
   test("registers missed shots", () => {
     gameBoard.receiveAttack(1, 0);
-    expect(gameBoard.board[1]).toStrictEqual(["M", "H", destroyer]);
+    expect(gameBoard.board[1]).toStrictEqual(["M", destroyer, destroyer]);
   });
 
   test("does nothing to registered shots", () => {
