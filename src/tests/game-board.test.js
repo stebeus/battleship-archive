@@ -15,4 +15,8 @@ describe("Board creator", () => {
   test("board has 10 columns", () => {
     expect(board[0]).toHaveLength(10);
   });
+
+  test("all empty cell values are 0", () => {
+    expect(board.every((row) => row.every((cell) => cell === 0)));
+  });
 });
