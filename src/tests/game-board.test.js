@@ -66,7 +66,11 @@ describe("Attack reception in board", () => {
   });
 
   test("does nothing to registered shots", () => {
-    gameBoard.receiveAttack(1, 0);
+    for (let hit = 0; hit < destroyer.health; hit++) {
+      gameBoard.receiveAttack(1, 0);
+      gameBoard.receiveAttack(1, 1);
+    }
+
     expect(gameBoard.board[1]).toStrictEqual(["M", "H", destroyer]);
   });
 
