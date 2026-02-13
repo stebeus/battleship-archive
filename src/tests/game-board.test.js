@@ -20,3 +20,5 @@ describe("Board creator", () => {
     expect(board.every((row) => row.every((cell) => cell === 0)));
   });
 });
+
+const gameBoard = new GameBoard();
