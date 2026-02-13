@@ -1,3 +1,5 @@
+import { Ship } from "./ship";
+
 function createBoard(rows = 1, columns = 1) {
   const board = [];
   const cell = 0;
