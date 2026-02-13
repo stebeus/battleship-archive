@@ -37,6 +37,17 @@ class GameBoard {
       }
     }
   }
+
+  receiveAttack(row, column) {
+    const cell = this.board[row][column];
+
+    if (cell === 0) this.board[row][column] = "M";
+
+    if (cell instanceof Ship) {
+      this.board[row][column] = "H";
+      cell.hit();
+    }
+  }
 }
 
 export { createBoard, GameBoard };
