@@ -22,3 +22,4 @@ describe("Board creator", () => {
 });
 
 const gameBoard = new GameBoard();
+const destroyer = gameBoard.ships[4];
