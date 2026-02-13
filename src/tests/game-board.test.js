@@ -51,7 +51,9 @@ describe("Ship placement", () => {
 });
 
 describe("Attack reception in board", () => {
-  gameBoard.board = [0, destroyer, destroyer];
+  beforeEach(() => {
+    gameBoard.board[1] = [0, destroyer, destroyer];
+  });
 
   test("registers hit shots", () => {
     gameBoard.receiveAttack(1, 1);
