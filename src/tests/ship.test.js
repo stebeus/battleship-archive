@@ -12,8 +12,9 @@ test("creates ship of length 1 by default", () => {
 });
 
 test("reduces ship health by 1 hit", () => {
+  ship.health = 2;
   ship.hit();
-  expect(ship.health).toBe(0);
+  expect(ship.health).toBe(1);
 });
 
 describe("Ship.isWrecked", () => {
