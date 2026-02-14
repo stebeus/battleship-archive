@@ -65,4 +65,10 @@ describe("Sinking of all ships", () => {
   beforeEach(() => {
     gameBoard.board = createBoard(5, 5);
   });
+
+  test("returns false if all ships are not sunk", () => {
+    gameBoard.placeShip(destroyer, 0, 1);
+    gameBoard.placeShip(destroyer, 2, 3, "vertical");
+    expect(gameBoard.reportSunkStatusOfAllShips()).toBe(false);
+  });
 });
