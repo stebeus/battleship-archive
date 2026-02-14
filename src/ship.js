@@ -9,8 +9,7 @@ class Ship {
   }
 
   hit() {
-    if (this.isWrecked()) return this.health;
-    return --this.health;
+    this.isWrecked() ? this.health : --this.health;
   }
 }
 
