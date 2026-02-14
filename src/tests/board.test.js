@@ -17,5 +17,5 @@ test("board has 10 columns", () => {
 
 test("all empty cell values are 0", () => {
   const isEmptyCellZero = (cell) => cell === 0;
-  expect(board.every((row) => row.every(isEmptyCellZero)));
+  expect(board.every((row) => row.every(isEmptyCellZero))).toBeTruthy();
 });
