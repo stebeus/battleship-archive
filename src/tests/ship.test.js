@@ -17,6 +17,12 @@ test("reduces ship health by 1 hit", () => {
   expect(ship.health).toBe(1);
 });
 
+test("stops reducing ship health when it is 0", () => {
+  ship.health = 0;
+  ship.hit();
+  expect(ship.health).toBe(0);
+});
+
 describe("Ship.isWrecked", () => {
   test("returns false if ship is not wrecked", () => {
     expect(ship.isWrecked()).toBeFalsy();
