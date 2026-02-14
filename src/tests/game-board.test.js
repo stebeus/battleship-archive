@@ -1,5 +1,6 @@
 import { beforeEach, describe, expect, test } from "vitest";
-import { createBoard, GameBoard } from "../game-board";
+import { createBoard } from "../board";
+import { GameBoard } from "../game-board";
 
 const gameBoard = new GameBoard();
 const destroyer = gameBoard.ships[4];

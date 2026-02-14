@@ -1,5 +1,5 @@
 import { expect, test } from "vitest";
-import { createBoard } from "../game-board";
+import { createBoard } from "../board";
 
 const board = createBoard(10, 10);
 
