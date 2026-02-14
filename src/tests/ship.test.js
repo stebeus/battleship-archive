@@ -16,13 +16,13 @@ test("reduces ship health by 1 hit", () => {
   expect(ship.health).toBe(0);
 });
 
-describe("Ship sunk status", () => {
-  test("returns false if ship is not sunk", () => {
-    expect(ship.isSunk()).toBeFalsy();
+describe("Ship wreckage status", () => {
+  test("returns false if ship is not wrecked", () => {
+    expect(ship.isWrecked()).toBeFalsy();
   });
 
-  test("returns true if ship is sunk", () => {
+  test("returns true if ship is wrecked", () => {
     ship.hit();
-    expect(ship.isSunk()).toBeTruthy();
+    expect(ship.isWrecked()).toBeTruthy();
   });
 });
