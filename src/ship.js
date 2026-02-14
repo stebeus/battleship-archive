@@ -4,12 +4,12 @@ class Ship {
     this.health = this.length;
   }
 
-  hit() {
-    return --this.health;
-  }
-
   isWrecked() {
     return this.health === 0;
+  }
+
+  hit() {
+    return --this.health;
   }
 }
 
