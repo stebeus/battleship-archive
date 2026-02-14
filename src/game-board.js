@@ -48,6 +48,11 @@ class GameBoard {
       cell.hit();
     }
   }
+
+  reportSunkStatusOfAllShips() {
+    const isNotInstanceOfShip = (cell) => !(cell instanceof Ship);
+    return this.board.every((row) => row.every(isNotInstanceOfShip));
+  }
 }
 
 export { createBoard, GameBoard };
