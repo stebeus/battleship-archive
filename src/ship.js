@@ -5,7 +5,7 @@ class Ship {
   }
 
   hit() {
-    this.health--;
+    return --this.health;
   }
 
   isWrecked() {
