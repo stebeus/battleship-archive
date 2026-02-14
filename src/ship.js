@@ -8,7 +8,7 @@ class Ship {
     this.health--;
   }
 
-  isSunk() {
+  isWrecked() {
     return this.health === 0;
   }
 }
