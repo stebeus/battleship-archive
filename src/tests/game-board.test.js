@@ -60,3 +60,9 @@ describe("Attack reception in board", () => {
     expect(gameBoard.board[1]).toStrictEqual(["M", "H", destroyer]);
   });
 });
+
+describe("Sinking of all ships", () => {
+  beforeEach(() => {
+    gameBoard.board = createBoard(5, 5);
+  });
+});
