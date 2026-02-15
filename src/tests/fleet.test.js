@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, test } from "vitest";
-import { createFlotilla } from "../fleet";
+import { createFleet, createFlotilla } from "../fleet";
 
 describe("Flotilla", () => {
   let flotilla;
@@ -31,4 +31,10 @@ describe("Flotilla", () => {
     const isLengthFive = (ship) => ship.length === 5;
     expect(flotilla.every(isLengthFive)).toBeTruthy();
   });
+});
+
+test("creates a fleet with no arrays", () => {
+  const fleet = createFleet(5);
+  const isArray = (item) => Array.isArray(item);
+  expect(fleet.every(isArray)).toBeFalsy();
 });
