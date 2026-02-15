@@ -21,6 +21,7 @@ describe("GameBoard.place", () => {
   ];
 
   const verticalPlacement = [
+    [0, 0, 0],
     [0, ship, 0],
     [0, ship, 0],
   ];
@@ -31,7 +32,7 @@ describe("GameBoard.place", () => {
   });
 
   test("places ship vertically", () => {
-    gameBoard.place(ship, 0, 1, "vertical");
+    gameBoard.place(ship, 1, 1, "vertical");
     expect(gameBoard.grid).toStrictEqual(verticalPlacement);
   });
 });
