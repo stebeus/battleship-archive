@@ -22,12 +22,12 @@ describe("Ship placement", () => {
   });
 
   test("places ship horizontally by default", () => {
-    gameBoard.placeShip(ship, 1, 1);
+    gameBoard.place(ship, 1, 1);
     expect(gameBoard.board).toStrictEqual(horizontalPlacement);
   });
 
   test("places ship vertically", () => {
-    gameBoard.placeShip(ship, 0, 1, "vertical");
+    gameBoard.place(ship, 0, 1, "vertical");
     expect(gameBoard.board).toStrictEqual(verticalPlacement);
   });
 });
@@ -69,8 +69,8 @@ describe("Sinking of all ships", () => {
   });
 
   test("returns false if all ships are not sunk", () => {
-    gameBoard.placeShip(ship, 0, 1);
-    gameBoard.placeShip(ship, 2, 3, "vertical");
+    gameBoard.place(ship, 0, 1);
+    gameBoard.place(ship, 2, 3, "vertical");
     expect(gameBoard.reportSunkStatusOfAllShips()).toBe(false);
   });
 
