@@ -13,13 +13,13 @@ class GameBoard {
     ];
   }
 
-  place(ship, row, column, direction = "horizontal") {
+  place(ship, row, column, axis = "x") {
     for (let cell = 0; cell < ship.length; cell++) {
-      if (direction === "horizontal") {
+      if (axis === "x") {
         this.grid[row][column++] = ship;
       }
 
-      if (direction === "vertical") {
+      if (axis === "y") {
         this.grid[row++][column] = ship;
       }
     }
