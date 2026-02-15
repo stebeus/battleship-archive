@@ -69,7 +69,7 @@ describe("GameBoard.receiveAttack", () => {
 });
 
 describe("GameBoard.isFleetSunk", () => {
-  test("returns false if all ships are not sunk", () => {
+  test("returns false if fleet is not sunk", () => {
     gameBoard.grid = [
       [0, ship, ship, 0],
       [0, 0, 0, 0],
@@ -80,7 +80,7 @@ describe("GameBoard.isFleetSunk", () => {
     expect(gameBoard.isFleetSunk()).toBeFalsy();
   });
 
-  test("returns true if all ships are sunk", () => {
+  test("returns true if fleet is sunk", () => {
     gameBoard.grid = [
       [0, 0, 0, 0],
       [0, 0, 0, 0],
