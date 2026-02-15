@@ -1,5 +1,4 @@
 import { beforeEach, describe, expect, test } from "vitest";
-import { createBoard } from "../board";
 import { GameBoard } from "../game-board";
 import { Ship } from "../ship";
 
@@ -18,7 +17,11 @@ describe("GameBoard.place", () => {
   ];
 
   beforeEach(() => {
-    gameBoard.grid = createBoard(2, 3);
+    gameBoard.grid = [
+      [0, 0, 0],
+      [0, 0, 0],
+      [0, 0, 0],
+    ];
   });
 
   test("places ship horizontally by default", () => {
@@ -64,17 +67,25 @@ describe("GameBoard.receiveAttack", () => {
 });
 
 describe("GameBoard.isFleetSunk", () => {
-  beforeEach(() => {
-    gameBoard.grid = createBoard(5, 5);
-  });
-
   test("returns false if all ships are not sunk", () => {
-    gameBoard.place(ship, 0, 1);
-    gameBoard.place(ship, 2, 3, "vertical");
+    gameBoard.grid = [
+      [0, ship, ship, 0],
+      [0, 0, 0, 0],
+      [0, 0, ship, 0],
+      [0, 0, ship, 0],
+    ];
+
     expect(gameBoard.isFleetSunk()).toBeFalsy();
   });
 
   test("returns true if all ships are sunk", () => {
+    gameBoard.grid = [
+      [0, 0, 0, 0],
+      [0, 0, 0, 0],
+      [0, 0, 0, 0],
+      [0, 0, 0, 0],
+    ];
+
     expect(gameBoard.isFleetSunk()).toBeTruthy();
   });
 });
