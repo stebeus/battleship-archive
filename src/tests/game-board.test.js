@@ -4,17 +4,17 @@ import { GameBoard } from "../game-board";
 import { Ship } from "../ship";
 
 const gameBoard = new GameBoard();
-const destroyer = new Ship(2);
+const ship = new Ship(2);
 
 describe("Ship placement", () => {
   const horizontalPlacement = [
     [0, 0, 0],
-    [0, destroyer, destroyer],
+    [0, ship, ship],
   ];
 
   const verticalPlacement = [
-    [0, destroyer, 0],
-    [0, destroyer, 0],
+    [0, ship, 0],
+    [0, ship, 0],
   ];
 
   beforeEach(() => {
@@ -22,44 +22,44 @@ describe("Ship placement", () => {
   });
 
   test("places ship horizontally by default", () => {
-    gameBoard.placeShip(destroyer, 1, 1);
+    gameBoard.placeShip(ship, 1, 1);
     expect(gameBoard.board).toStrictEqual(horizontalPlacement);
   });
 
   test("places ship vertically", () => {
-    gameBoard.placeShip(destroyer, 0, 1, "vertical");
+    gameBoard.placeShip(ship, 0, 1, "vertical");
     expect(gameBoard.board).toStrictEqual(verticalPlacement);
   });
 });
 
 describe("Attack reception in board", () => {
   beforeEach(() => {
-    gameBoard.board[1] = [0, destroyer, destroyer];
+    gameBoard.board[1] = [0, ship, ship];
   });
 
   describe("Hit shots", () => {
     test("registers hit shots", () => {
       gameBoard.receiveAttack(1, 1);
-      expect(gameBoard.board[1]).toStrictEqual([0, "H", destroyer]);
+      expect(gameBoard.board[1]).toStrictEqual([0, "H", ship]);
     });
 
     test("reduces damaged ship health", () => {
-      expect(destroyer.health).toBe(1);
+      expect(ship.health).toBe(1);
     });
   });
 
   test("registers missed shots", () => {
     gameBoard.receiveAttack(1, 0);
-    expect(gameBoard.board[1]).toStrictEqual(["M", destroyer, destroyer]);
+    expect(gameBoard.board[1]).toStrictEqual(["M", ship, ship]);
   });
 
   test("does nothing to registered shots", () => {
-    for (let hit = 0; hit < destroyer.health; hit++) {
+    for (let hit = 0; hit < ship.health; hit++) {
       gameBoard.receiveAttack(1, 0);
       gameBoard.receiveAttack(1, 1);
     }
 
-    expect(gameBoard.board[1]).toStrictEqual(["M", "H", destroyer]);
+    expect(gameBoard.board[1]).toStrictEqual(["M", "H", ship]);
   });
 });
 
@@ -69,8 +69,8 @@ describe("Sinking of all ships", () => {
   });
 
   test("returns false if all ships are not sunk", () => {
-    gameBoard.placeShip(destroyer, 0, 1);
-    gameBoard.placeShip(destroyer, 2, 3, "vertical");
+    gameBoard.placeShip(ship, 0, 1);
+    gameBoard.placeShip(ship, 2, 3, "vertical");
     expect(gameBoard.reportSunkStatusOfAllShips()).toBe(false);
   });
 
