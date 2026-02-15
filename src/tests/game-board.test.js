@@ -48,7 +48,7 @@ describe("GameBoard.receiveAttack", () => {
       expect(gameBoard.grid[1]).toStrictEqual([0, "h", ship]);
     });
 
-    test("reduces damaged ship health", () => {
+    test("reduces targeted ship health", () => {
       expect(ship.health).toBe(1);
     });
   });
@@ -58,7 +58,7 @@ describe("GameBoard.receiveAttack", () => {
     expect(gameBoard.grid[1]).toStrictEqual(["m", ship, ship]);
   });
 
-  test("does nothing to registered shots", () => {
+  test("does not alter registered shots", () => {
     for (let hit = 0; hit < ship.health; hit++) {
       gameBoard.receiveAttack(1, 0);
       gameBoard.receiveAttack(1, 1);
