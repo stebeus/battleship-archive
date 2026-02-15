@@ -11,7 +11,7 @@ function createFlotilla(quantity = 1, shipLength = 1) {
   return flotilla;
 }
 
-function createFleet(quantity) {
+function createFleet(quantity = 1) {
   const fleet = [];
   let shipLength = 1;
 
