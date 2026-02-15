@@ -25,3 +25,8 @@ beforeEach(() => {
 test("creates a flotilla of 5 ships", () => {
   expect(flotilla).toHaveLength(5);
 });
+
+test("all ship lengths are 5", () => {
+  const isLengthFive = (ship) => ship.length === 5;
+  expect(flotilla.every(isLengthFive)).toBeTruthy();
+});
