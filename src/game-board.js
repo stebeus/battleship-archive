@@ -4,7 +4,7 @@ import { Ship } from "./ship";
 class GameBoard {
   constructor() {
     this.grid = createGrid(10, 10);
-    this.ships = [
+    this.fleet = [
       new Ship(5),
       new Ship(4),
       new Ship(3),
