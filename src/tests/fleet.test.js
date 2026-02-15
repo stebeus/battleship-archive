@@ -1,9 +1,13 @@
-import { describe, expect, test } from "vitest";
+import { beforeEach, describe, expect, test } from "vitest";
 import { createFlotilla } from "../fleet";
 
-const flotilla = createFlotilla();
+let flotilla;
 
 describe("Default behavior", () => {
+  beforeEach(() => {
+    flotilla = createFlotilla();
+  });
+
   test("creates a flotilla of 1 ship by default", () => {
     expect(flotilla).toHaveLength(1);
   });
