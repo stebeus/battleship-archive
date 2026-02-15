@@ -3,7 +3,7 @@ import { Ship } from "./ship";
 
 class GameBoard {
   constructor() {
-    this.board = createGrid(10, 10);
+    this.grid = createGrid(10, 10);
     this.ships = [
       new Ship(5),
       new Ship(4),
@@ -13,32 +13,32 @@ class GameBoard {
     ];
   }
 
-  placeShip(ship, row, column, direction = "horizontal") {
+  place(ship, row, column, direction = "horizontal") {
     for (let cell = 0; cell < ship.length; cell++) {
       if (direction === "horizontal") {
-        this.board[row][column++] = ship;
+        this.grid[row][column++] = ship;
       }
 
       if (direction === "vertical") {
-        this.board[row++][column] = ship;
+        this.grid[row++][column] = ship;
       }
     }
   }
 
   receiveAttack(row, column) {
-    const cell = this.board[row][column];
+    const cell = this.grid[row][column];
 
-    if (cell === 0) this.board[row][column] = "M";
+    if (cell === 0) this.grid[row][column] = "M";
 
     if (cell instanceof Ship) {
-      this.board[row][column] = "H";
+      this.grid[row][column] = "H";
       cell.hit();
     }
   }
 
-  reportSunkStatusOfAllShips() {
+  isFleetSunk() {
     const isNotInstanceOfShip = (cell) => !(cell instanceof Ship);
-    return this.board.every((row) => row.every(isNotInstanceOfShip));
+    return this.grid.every((row) => row.every(isNotInstanceOfShip));
   }
 }
 
