@@ -1,9 +1,9 @@
-import { createBoard } from "./board";
+import { createGrid } from "./grid";
 import { Ship } from "./ship";
 
 class GameBoard {
   constructor() {
-    this.board = createBoard(10, 10);
+    this.board = createGrid(10, 10);
     this.ships = [
       new Ship(5),
       new Ship(4),
