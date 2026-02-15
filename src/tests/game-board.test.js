@@ -26,8 +26,8 @@ describe("GameBoard.place", () => {
     [0, ship, 0],
   ];
 
-  test("places ship horizontally by default", () => {
-    gameBoard.place(ship, 1, 1);
+  test("places ship horizontally", () => {
+    gameBoard.place(ship, 1, 1, "x");
     expect(gameBoard.grid).toStrictEqual(horizontalPlacement);
   });
 
