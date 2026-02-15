@@ -71,10 +71,10 @@ describe("Sinking of all ships", () => {
   test("returns false if all ships are not sunk", () => {
     gameBoard.place(ship, 0, 1);
     gameBoard.place(ship, 2, 3, "vertical");
-    expect(gameBoard.reportSunkStatusOfAllShips()).toBe(false);
+    expect(gameBoard.isFleetSunk()).toBe(false);
   });
 
   test("returns true if all ships are sunk", () => {
-    expect(gameBoard.reportSunkStatusOfAllShips()).toBe(true);
+    expect(gameBoard.isFleetSunk()).toBe(true);
   });
 });
