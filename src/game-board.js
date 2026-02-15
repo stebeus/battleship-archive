@@ -1,16 +1,11 @@
+import { createFleet } from "./fleet";
 import { createGrid } from "./grid";
 import { Ship } from "./ship";
 
 class GameBoard {
   constructor() {
     this.grid = createGrid(10, 10);
-    this.fleet = [
-      new Ship(2),
-      new Ship(3),
-      new Ship(3),
-      new Ship(4),
-      new Ship(5),
-    ];
+    this.fleet = createFleet(4);
   }
 
   place(ship, row, column, axis) {
