@@ -17,3 +17,11 @@ describe("Default behavior", () => {
     expect(flotilla.every(isLengthOne)).toBeTruthy();
   });
 });
+
+beforeEach(() => {
+  flotilla = createFlotilla(5, 5);
+});
+
+test("creates a flotilla of 5 ships", () => {
+  expect(flotilla).toHaveLength(5);
+});
