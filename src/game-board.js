@@ -5,11 +5,11 @@ class GameBoard {
   constructor() {
     this.grid = createGrid(10, 10);
     this.fleet = [
-      new Ship(5),
-      new Ship(4),
-      new Ship(3),
-      new Ship(3),
       new Ship(2),
+      new Ship(3),
+      new Ship(3),
+      new Ship(4),
+      new Ship(5),
     ];
   }
 
