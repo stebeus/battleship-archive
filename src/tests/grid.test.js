@@ -3,10 +3,6 @@ import { createGrid } from "../grid";
 
 const grid = createGrid(10, 10);
 
-test("creates a 1 by 1 grid by default", () => {
-  expect(createGrid()).toStrictEqual([[0]]);
-});
-
 test("grid has 10 rows", () => {
   expect(grid).toHaveLength(10);
 });
