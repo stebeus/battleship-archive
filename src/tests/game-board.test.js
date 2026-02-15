@@ -1,9 +1,10 @@
 import { beforeEach, describe, expect, test } from "vitest";
 import { createBoard } from "../board";
 import { GameBoard } from "../game-board";
+import { Ship } from "../ship";
 
 const gameBoard = new GameBoard();
-const destroyer = gameBoard.ships[4];
+const destroyer = new Ship(2);
 
 describe("Ship placement", () => {
   const horizontalPlacement = [
