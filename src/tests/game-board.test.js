@@ -18,29 +18,29 @@ describe("GameBoard.place", () => {
   ];
 
   beforeEach(() => {
-    gameBoard.board = createBoard(2, 3);
+    gameBoard.grid = createBoard(2, 3);
   });
 
   test("places ship horizontally by default", () => {
     gameBoard.place(ship, 1, 1);
-    expect(gameBoard.board).toStrictEqual(horizontalPlacement);
+    expect(gameBoard.grid).toStrictEqual(horizontalPlacement);
   });
 
   test("places ship vertically", () => {
     gameBoard.place(ship, 0, 1, "vertical");
-    expect(gameBoard.board).toStrictEqual(verticalPlacement);
+    expect(gameBoard.grid).toStrictEqual(verticalPlacement);
   });
 });
 
 describe("GameBoard.receiveAttack", () => {
   beforeEach(() => {
-    gameBoard.board[1] = [0, ship, ship];
+    gameBoard.grid[1] = [0, ship, ship];
   });
 
   describe("Hit shots", () => {
     test("registers hit shots", () => {
       gameBoard.receiveAttack(1, 1);
-      expect(gameBoard.board[1]).toStrictEqual([0, "H", ship]);
+      expect(gameBoard.grid[1]).toStrictEqual([0, "H", ship]);
     });
 
     test("reduces damaged ship health", () => {
@@ -50,7 +50,7 @@ describe("GameBoard.receiveAttack", () => {
 
   test("registers missed shots", () => {
     gameBoard.receiveAttack(1, 0);
-    expect(gameBoard.board[1]).toStrictEqual(["M", ship, ship]);
+    expect(gameBoard.grid[1]).toStrictEqual(["M", ship, ship]);
   });
 
   test("does nothing to registered shots", () => {
@@ -59,13 +59,13 @@ describe("GameBoard.receiveAttack", () => {
       gameBoard.receiveAttack(1, 1);
     }
 
-    expect(gameBoard.board[1]).toStrictEqual(["M", "H", ship]);
+    expect(gameBoard.grid[1]).toStrictEqual(["M", "H", ship]);
   });
 });
 
 describe("GameBoard.isFleetSunk", () => {
   beforeEach(() => {
-    gameBoard.board = createBoard(5, 5);
+    gameBoard.grid = createBoard(5, 5);
   });
 
   test("returns false if all ships are not sunk", () => {
