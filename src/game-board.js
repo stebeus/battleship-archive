@@ -13,7 +13,7 @@ class GameBoard {
     ];
   }
 
-  place(ship, row, column, axis = "x") {
+  place(ship, row, column, axis) {
     for (let cell = 0; cell < ship.length; cell++) {
       if (axis === "x") this.grid[row][column++] = ship;
       if (axis === "y") this.grid[row++][column] = ship;
