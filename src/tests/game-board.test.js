@@ -59,7 +59,7 @@ describe("GameBoard.receiveAttack", () => {
   });
 
   test("does not alter registered shots", () => {
-    for (let hit = 0; hit < ship.health; hit++) {
+    for (let hit = 0; hit < 2; hit++) {
       gameBoard.receiveAttack(1, 0);
       gameBoard.receiveAttack(1, 1);
     }
