@@ -1,4 +1,4 @@
-function createGrid(rows = 1, columns = 1) {
+function createGrid(rows, columns) {
   const grid = [];
   const cell = 0;
 
