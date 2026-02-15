@@ -33,6 +33,11 @@ describe("Flotilla", () => {
   });
 });
 
+test("creates a fleet with 1 ship by default", () => {
+  const fleet = createFleet();
+  expect(fleet).toHaveLength(1);
+});
+
 test("creates a fleet with no arrays", () => {
   const fleet = createFleet(5);
   const isArray = (item) => Array.isArray(item);
