@@ -37,8 +37,8 @@ class GameBoard {
   }
 
   isFleetSunk() {
-    const isNotInstanceOfShip = (cell) => !(cell instanceof Ship);
-    return this.grid.every((row) => row.every(isNotInstanceOfShip));
+    const isNotShip = (cell) => !(cell instanceof Ship);
+    return this.grid.every((row) => row.every(isNotShip));
   }
 }
 
