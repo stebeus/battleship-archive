@@ -32,7 +32,7 @@ describe("GameBoard.place", () => {
   });
 
   test("places ship vertically", () => {
-    gameBoard.place(ship, 1, 1, "vertical");
+    gameBoard.place(ship, 1, 1, "y");
     expect(gameBoard.grid).toStrictEqual(verticalPlacement);
   });
 });
