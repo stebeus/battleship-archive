@@ -6,6 +6,14 @@ const gameBoard = new GameBoard();
 const ship = new Ship(2);
 
 describe("GameBoard.place", () => {
+  beforeEach(() => {
+    gameBoard.grid = [
+      [0, 0, 0],
+      [0, 0, 0],
+      [0, 0, 0],
+    ];
+  });
+
   const horizontalPlacement = [
     [0, 0, 0],
     [0, ship, ship],
@@ -15,14 +23,6 @@ describe("GameBoard.place", () => {
     [0, ship, 0],
     [0, ship, 0],
   ];
-
-  beforeEach(() => {
-    gameBoard.grid = [
-      [0, 0, 0],
-      [0, 0, 0],
-      [0, 0, 0],
-    ];
-  });
 
   test("places ship horizontally by default", () => {
     gameBoard.place(ship, 1, 1);
