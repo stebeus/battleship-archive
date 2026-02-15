@@ -11,4 +11,16 @@ function createFlotilla(quantity = 1, shipLength = 1) {
   return flotilla;
 }
 
-export { createFlotilla };
+function createFleet(quantity) {
+  const fleet = [];
+  let shipLength = 1;
+
+  for (let unit = quantity; unit > 0; unit--) {
+    const flotilla = createFlotilla(quantity--, shipLength++);
+    fleet.push(flotilla);
+  }
+
+  return fleet.flat();
+}
+
+export { createFleet, createFlotilla };
