@@ -49,6 +49,8 @@ describe("GameBoard.receiveAttack", () => {
     });
 
     test("reduces targeted ship health", () => {
+      ship.health = 2;
+      gameBoard.receiveAttack(0, 1);
       expect(ship.health).toBe(1);
     });
   });
