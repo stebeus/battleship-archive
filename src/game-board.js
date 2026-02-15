@@ -23,10 +23,10 @@ class GameBoard {
   receiveAttack(row, column) {
     const cell = this.grid[row][column];
 
-    if (cell === 0) this.grid[row][column] = "M";
+    if (cell === 0) this.grid[row][column] = "m";
 
     if (cell instanceof Ship) {
-      this.grid[row][column] = "H";
+      this.grid[row][column] = "h";
       cell.hit();
     }
   }
