@@ -6,7 +6,7 @@ import { Ship } from "../ship";
 const gameBoard = new GameBoard();
 const ship = new Ship(2);
 
-describe("Ship placement", () => {
+describe("GameBoard.place", () => {
   const horizontalPlacement = [
     [0, 0, 0],
     [0, ship, ship],
@@ -32,7 +32,7 @@ describe("Ship placement", () => {
   });
 });
 
-describe("Attack reception in board", () => {
+describe("GameBoard.receiveAttack", () => {
   beforeEach(() => {
     gameBoard.board[1] = [0, ship, ship];
   });
@@ -63,7 +63,7 @@ describe("Attack reception in board", () => {
   });
 });
 
-describe("Sinking of all ships", () => {
+describe("GameBoard.isFleetSunk", () => {
   beforeEach(() => {
     gameBoard.board = createBoard(5, 5);
   });
