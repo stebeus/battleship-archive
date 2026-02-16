@@ -26,11 +26,13 @@ class GameBoard {
 
   receiveAttack(row, column) {
     const cell = this.grid[row][column];
+    const miss = "m";
+    const hit = "h";
 
-    if (this.#isCellEmpty(row, column)) this.grid[row][column] = "m";
+    if (this.#isCellEmpty(row, column)) this.grid[row][column] = miss;
 
     if (cell instanceof Ship) {
-      this.grid[row][column] = "h";
+      this.grid[row][column] = hit;
       cell.hit();
     }
   }
