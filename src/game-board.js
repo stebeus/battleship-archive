@@ -9,6 +9,9 @@ class GameBoard {
   }
 
   place(ship, row, column, axis) {
+    const cell = this.grid[row][column];
+    if (cell !== 0) return;
+
     for (let cell = 0; cell < ship.length; cell++) {
       if (axis === "x") this.grid[row][column++] = ship;
       if (axis === "y") this.grid[row++][column] = ship;
