@@ -3,6 +3,8 @@ import { createGrid } from "./grid";
 import { Ship } from "./ship";
 
 class GameBoard {
+  #empty = 0;
+
   constructor() {
     this.grid = createGrid(10, 10);
     this.fleet = createFleet(4);
@@ -10,7 +12,7 @@ class GameBoard {
 
   place(ship, row, column, axis) {
     const cell = this.grid[row][column];
-    if (cell !== 0) return;
+    if (cell !== this.#empty) return;
 
     for (let cell = 0; cell < ship.length; cell++) {
       if (axis === "x") this.grid[row][column++] = ship;
@@ -21,7 +23,7 @@ class GameBoard {
   receiveAttack(row, column) {
     const cell = this.grid[row][column];
 
-    if (cell === 0) this.grid[row][column] = "m";
+    if (cell === this.#empty) this.grid[row][column] = "m";
 
     if (cell instanceof Ship) {
       this.grid[row][column] = "h";
