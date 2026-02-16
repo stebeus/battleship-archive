@@ -12,11 +12,11 @@ class GameBoard {
 
   #checkPlacement(row, column) {
     const cell = this.grid[row][column];
-    if (cell !== this.#empty) return;
+    return cell === this.#empty;
   }
 
   place(ship, row, column, axis) {
-    this.#checkPlacement(row, column);
+    if (!this.#checkPlacement(row, column)) return;
 
     for (let cell = 0; cell < ship.length; cell++) {
       if (axis === "x") this.grid[row][column++] = ship;
