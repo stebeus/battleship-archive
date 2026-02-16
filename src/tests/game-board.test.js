@@ -26,6 +26,12 @@ describe("GameBoard.place", () => {
     [0, ship, 0],
   ];
 
+  test("does not place ship on filled cells", () => {
+    gameBoard.place(ship, 1, 1, "x");
+    gameBoard.place(ship, 1, 1, "y");
+    expect(gameBoard.grid).toStrictEqual(horizontalPlacement);
+  });
+
   test("places ship horizontally", () => {
     gameBoard.place(ship, 1, 1, "x");
     expect(gameBoard.grid).toStrictEqual(horizontalPlacement);
