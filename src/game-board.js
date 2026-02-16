@@ -10,13 +10,13 @@ class GameBoard {
     this.fleet = createFleet(4);
   }
 
-  #checkPlacement(row, column) {
+  #isCellEmpty(row, column) {
     const cell = this.grid[row][column];
     return cell === this.#empty;
   }
 
   place(ship, row, column, axis) {
-    if (!this.#checkPlacement(row, column)) return;
+    if (!this.#isCellEmpty(row, column)) return;
 
     for (let cell = 0; cell < ship.length; cell++) {
       if (axis === "x") this.grid[row][column++] = ship;
