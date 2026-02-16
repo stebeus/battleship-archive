@@ -27,7 +27,7 @@ class GameBoard {
   receiveAttack(row, column) {
     const cell = this.grid[row][column];
 
-    if (cell === this.#empty) this.grid[row][column] = "m";
+    if (this.#isCellEmpty(row, column)) this.grid[row][column] = "m";
 
     if (cell instanceof Ship) {
       this.grid[row][column] = "h";
