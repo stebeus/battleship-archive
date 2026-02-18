@@ -18,3 +18,20 @@ function createGrid(element, grid) {
   element.firstElementChild.remove();
   return element;
 }
+
+function createBoard({ name, gameBoard: { grid } }) {
+  const content = template.content.cloneNode(true);
+
+  const board = content.querySelector(".board");
+  const playerName = content.querySelector(".board__player-name");
+  const playerGrid = content.querySelector(".grid");
+
+  board.id = name;
+  playerName.textContent = name;
+
+  createGrid(playerGrid, grid);
+
+  return content;
+}
+
+export { createBoard };
