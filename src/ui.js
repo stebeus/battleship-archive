@@ -1,25 +1,24 @@
-const template = document.getElementById("board-template");
-
-function createGrid(element, grid) {
+function createGrid(grid, parent) {
   const rows = grid.length;
   const columns = grid[0].length;
 
   for (let row = 0; row < rows; row++) {
     for (let column = 0; column < columns; column++) {
-      const cell = element.querySelector(".grid__cell").cloneNode(true);
+      const cell = parent.querySelector(".grid__cell").cloneNode(true);
 
-      const position = `${row},${column}`;
-      cell.dataset.coordinates = position;
+      const coordinates = `${row},${column}`;
+      cell.dataset.coordinates = coordinates;
 
-      element.append(cell);
+      parent.append(cell);
     }
   }
 
-  element.firstElementChild.remove();
-  return element;
+  parent.firstElementChild.remove();
+  return parent;
 }
 
 function createBoard({ name, gameBoard: { grid } }) {
+  const template = document.getElementById("board-template");
   const content = template.content.cloneNode(true);
 
   const board = content.querySelector(".board");
@@ -29,7 +28,7 @@ function createBoard({ name, gameBoard: { grid } }) {
   board.id = name;
   playerName.textContent = name;
 
-  createGrid(playerGrid, grid);
+  createGrid(grid, playerGrid);
 
   return content;
 }
