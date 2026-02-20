@@ -47,4 +47,17 @@ function renderCell(row, column, cells, classModifier) {
   });
 }
 
+function renderBoard(grid, cells) {
+  const rows = grid.length;
+  const columns = grid[0].length;
+
+  for (let row = 0; row < rows; row++) {
+    for (let column = 0; column < columns; column++) {
+      const cell = grid[row][column];
+
+      if (cell instanceof Ship) renderCell(row, column, cells, "ship");
+    }
+  }
+}
+
 export { createBoard };
