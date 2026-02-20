@@ -1,6 +1,6 @@
 import "./assets/style.css";
-import { createBoard } from "./components/board";
 import { Player } from "./core/player";
+import { createBoard } from "./ui";
 
 const main = document.querySelector("main");
 const message = document.getElementById("message");
