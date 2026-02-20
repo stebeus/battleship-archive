@@ -1,3 +1,5 @@
+import { Ship } from "./core/ship";
+
 function createGrid(grid, parent) {
   const rows = grid.length;
   const columns = grid[0].length;
@@ -31,6 +33,18 @@ function createBoard({ name, gameBoard: { grid } }) {
   createGrid(grid, playerGrid);
 
   return content;
+}
+
+function renderCell(row, column, cells, classModifier) {
+  const position = `${row},${column}`;
+
+  cells.forEach((cell) => {
+    const coordinates = cell.dataset.coordinates;
+
+    if (coordinates === position) {
+      cell.classList.add(`grid__cell--${classModifier}`);
+    }
+  });
 }
 
 export { createBoard };
