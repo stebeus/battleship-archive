@@ -60,4 +60,10 @@ function renderBoard(grid, cells) {
   }
 }
 
-export { createBoard };
+function updateBoard({ name, gameBoard: { grid } }) {
+  const playerBoard = document.getElementById(name);
+  const cells = playerBoard.querySelectorAll(".grid__cell");
+  renderBoard(grid, cells);
+}
+
+export { createBoard, updateBoard };
