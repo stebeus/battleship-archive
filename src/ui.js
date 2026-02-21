@@ -54,8 +54,12 @@ function renderBoard(grid, cells) {
   for (let row = 0; row < rows; row++) {
     for (let column = 0; column < columns; column++) {
       const cell = grid[row][column];
+      const miss = "m";
+      const hit = "h";
 
       if (cell instanceof Ship) renderCell(row, column, cells, "ship");
+      if (cell === miss) renderCell(row, column, cells, "miss");
+      if (cell === hit) renderCell(row, column, cells, "hit");
     }
   }
 }
