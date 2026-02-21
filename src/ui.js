@@ -70,4 +70,19 @@ function updateBoard({ name, gameBoard: { grid } }) {
   renderBoard(grid, cells);
 }
 
-export { createBoard, updateBoard };
+function handleAttack(event) {
+  const cell = event.target.closest(".grid__cell");
+  if (!cell) return;
+
+  const coordinates = cell
+    .getAttribute("data-coordinates")
+    .split(",")
+    .map(Number);
+
+  const [row, column] = coordinates;
+
+  robot.gameBoard.receiveAttack(row, column);
+  updateBoard(robot);
+}
+
+export { createBoard, updateBoard, handleAttack };
