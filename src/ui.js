@@ -71,7 +71,7 @@ function updateBoard({ name, gameBoard: { grid } }) {
   renderBoard(grid, cells);
 }
 
-function handleAttack(event) {
+function getCoordinates(event) {
   const cell = event.target.closest(".grid__cell");
   if (!cell) return;
 
@@ -80,8 +80,11 @@ function handleAttack(event) {
     .split(",")
     .map(Number);
 
-  const [row, column] = coordinates;
+  return coordinates;
+}
 
+function handleAttack(event) {
+  const [row, column] = getCoordinates(event);
   robot.gameBoard.receiveAttack(row, column);
   updateBoard(robot);
 }
