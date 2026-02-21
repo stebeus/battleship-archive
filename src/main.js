@@ -1,6 +1,6 @@
 import "./assets/style.css";
 import { human, robot } from "./core/player";
-import { createBoard, updateBoard } from "./ui";
+import { createBoard, handleAttack, updateBoard } from "./ui";
 
 const main = document.querySelector("main");
 const message = document.getElementById("message");
@@ -16,3 +16,14 @@ robot.gameBoard.place(robot.gameBoard.fleet[8], 7, 5, "x");
 
 updateBoard(human);
 updateBoard(robot);
+
+// Event delegation
+document.addEventListener("click", (event) => {
+  const robotBoard = event.target.closest("#robot");
+
+  if (robotBoard) {
+    const board = document.getElementById("robot");
+    board.addEventListener("click", handleAttack);
+    return;
+  }
+});
