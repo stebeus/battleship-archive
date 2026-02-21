@@ -7,4 +7,7 @@ class Player {
   }
 }
 
-export { Player };
+const human = new Player("human");
+const robot = new Player("robot");
+
+export { Player, human, robot };

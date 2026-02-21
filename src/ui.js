@@ -1,3 +1,4 @@
+import { robot } from "./core/player";
 import { Ship } from "./core/ship";
 
 function createGrid(grid, parent) {
