@@ -1,6 +1,6 @@
 import { Ship } from "../core/ship";
 
-function renderCell(row, column, cells, classModifier) {
+function modifyCell(row, column, cells, classModifier) {
   const position = `${row},${column}`;
 
   cells.forEach((cell) => {
@@ -26,9 +26,9 @@ function renderBoard({ name, gameBoard: { grid } }) {
       const miss = "m";
       const hit = "h";
 
-      if (cell instanceof Ship) renderCell(row, column, cells, "ship");
-      if (cell === miss) renderCell(row, column, cells, "miss");
-      if (cell === hit) renderCell(row, column, cells, "hit");
+      if (cell instanceof Ship) modifyCell(row, column, cells, "ship");
+      if (cell === miss) modifyCell(row, column, cells, "miss");
+      if (cell === hit) modifyCell(row, column, cells, "hit");
     }
   }
 }
