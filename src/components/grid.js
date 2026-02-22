@@ -1,9 +1,6 @@
 function createGrid(element, grid) {
-  const rows = grid.length;
-  const columns = grid[0].length;
-
-  for (let row = 0; row < rows; row++) {
-    for (let column = 0; column < columns; column++) {
+  for (const row in grid) {
+    for (const column in grid[row]) {
       const cell = element.querySelector(".grid__cell").cloneNode(true);
 
       const coordinates = `${row},${column}`;
