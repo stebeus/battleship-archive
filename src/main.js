@@ -1,6 +1,8 @@
 import "./assets/style.css";
+import { createBoard } from "./components/board";
+import { updateBoard } from "./components/render";
+import { handleAttack } from "./controllers/handlers";
 import { human, robot } from "./core/player";
-import { createBoard, handleAttack, updateBoard } from "./ui";
 
 const main = document.querySelector("main");
 const message = document.getElementById("message");
