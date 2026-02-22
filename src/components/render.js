@@ -27,13 +27,20 @@ function renderGrid({ name, gameBoard: { grid } }) {
     const [row, column] = getCellCoordinates(cellDiv);
     const cell = grid[row][column];
 
-    const ship = new CellStyle("ship", cell instanceof Ship);
-    const hit = new CellStyle("hit", cell === "h");
-    const miss = new CellStyle("miss", cell === "m");
+    const cellStyles = [
+      new CellStyle("ship", cell instanceof Ship),
+      new CellStyle("hit", cell === "h"),
+      new CellStyle("miss", cell === "m"),
+    ];
 
-    if (ship.condition) modifyCell(cellDiv, dataCoords, ship.className);
-    if (hit.condition) modifyCell(cellDiv, dataCoords, hit.className);
-    if (miss.condition) modifyCell(cellDiv, dataCoords, miss.className);
+    if (cellStyles[0].condition)
+      modifyCell(cellDiv, dataCoords, cellStyles[0].className);
+
+    if (cellStyles[1].condition)
+      modifyCell(cellDiv, dataCoords, cellStyles[1].className);
+
+    if (cellStyles[2].condition)
+      modifyCell(cellDiv, dataCoords, cellStyles[2].className);
   });
 }
 
