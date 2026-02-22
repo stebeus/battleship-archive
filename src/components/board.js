@@ -8,7 +8,7 @@ function createBoard({ name, gameBoard: { grid } }) {
   const playerName = content.querySelector(".board__player-name");
   const playerGrid = content.querySelector(".grid");
 
-  board.id = name;
+  board.dataset.player = name;
   playerName.textContent = name;
 
   createGrid(grid, playerGrid);

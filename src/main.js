@@ -21,10 +21,11 @@ updateBoard(robot);
 
 // Event delegation
 document.addEventListener("click", (event) => {
-  const robotBoard = event.target.closest("#robot");
+  const robotPlayer = "[data-player='robot']";
+  const robotBoard = event.target.closest(robotPlayer);
 
   if (robotBoard) {
-    const board = document.getElementById("robot");
+    const board = document.querySelector(robotPlayer);
     board.addEventListener("click", handleAttack);
     return;
   }

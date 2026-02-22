@@ -30,7 +30,8 @@ function renderBoard(grid, cells) {
 }
 
 function updateBoard({ name, gameBoard: { grid } }) {
-  const playerBoard = document.getElementById(name);
+  const player = `[data-player="${name}"]`;
+  const playerBoard = document.querySelector(player);
   const cells = playerBoard.querySelectorAll(".grid__cell");
   renderBoard(grid, cells);
 }
