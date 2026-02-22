@@ -12,7 +12,11 @@ function renderCell(row, column, cells, classModifier) {
   });
 }
 
-function renderBoard(grid, cells) {
+function renderBoard({ name, gameBoard: { grid } }) {
+  const player = `[data-player="${name}"]`;
+  const board = document.querySelector(player);
+  const cells = board.querySelectorAll(".grid__cell");
+
   const rows = grid.length;
   const columns = grid[0].length;
 
@@ -29,10 +33,4 @@ function renderBoard(grid, cells) {
   }
 }
 
-function updateBoard({ name, gameBoard: { grid } }) {
-  const player = `[data-player="${name}"]`;
-  const board = document.querySelector(player);
-  const cells = board.querySelectorAll(".grid__cell");
-  renderBoard(grid, cells);
-}
-export { updateBoard };
+export { renderBoard };

@@ -1,6 +1,6 @@
 import "./assets/style.css";
 import { createBoard } from "./components/board";
-import { updateBoard } from "./components/render";
+import { renderBoard } from "./components/render";
 import { handleAttack } from "./controllers/handlers";
 import { human, robot } from "./core/player";
 
@@ -16,8 +16,8 @@ main.insertBefore(robotBoard, message);
 human.gameBoard.place(human.gameBoard.fleet[6], 0, 2, "y");
 robot.gameBoard.place(robot.gameBoard.fleet[8], 7, 5, "x");
 
-updateBoard(human);
-updateBoard(robot);
+renderBoard(human);
+renderBoard(robot);
 
 // Event delegation
 document.addEventListener("click", (event) => {
