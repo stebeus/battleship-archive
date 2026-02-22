@@ -1,8 +1,6 @@
 import { Ship } from "../core/ship";
 
-function modifyCell(row, column, cell, className) {
-  const position = `${row},${column}`;
-
+function modifyCell(cell, position, className) {
   const dataCoords = cell.dataset.coords;
 
   if (dataCoords === position) {
