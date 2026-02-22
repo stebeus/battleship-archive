@@ -1,13 +1,13 @@
 import { Ship } from "../core/ship";
 
-function modifyCell(row, column, cells, classModifier) {
+function modifyCell(row, column, cells, className) {
   const position = `${row},${column}`;
 
   cells.forEach((cell) => {
     const coordinates = cell.dataset.coords;
 
     if (coordinates === position) {
-      cell.classList.add(`grid__cell--${classModifier}`);
+      cell.classList.add(`grid__cell--${className}`);
     }
   });
 }
