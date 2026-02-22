@@ -1,15 +1,13 @@
 import { Ship } from "../core/ship";
 
-function modifyCell(row, column, cells, className) {
+function modifyCell(row, column, cell, className) {
   const position = `${row},${column}`;
 
-  cells.forEach((cell) => {
-    const coordinates = cell.dataset.coords;
+  const coordinates = cell.dataset.coords;
 
-    if (coordinates === position) {
-      cell.classList.add(`grid__cell--${className}`);
-    }
-  });
+  if (coordinates === position) {
+    cell.classList.add(`grid__cell--${className}`);
+  }
 }
 
 function renderBoard({ name, gameBoard: { grid } }) {
