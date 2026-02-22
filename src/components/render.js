@@ -31,8 +31,8 @@ function renderBoard(grid, cells) {
 
 function updateBoard({ name, gameBoard: { grid } }) {
   const player = `[data-player="${name}"]`;
-  const playerBoard = document.querySelector(player);
-  const cells = playerBoard.querySelectorAll(".grid__cell");
+  const board = document.querySelector(player);
+  const cells = board.querySelectorAll(".grid__cell");
   renderBoard(grid, cells);
 }
 export { updateBoard };
