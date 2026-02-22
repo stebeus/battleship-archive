@@ -1,4 +1,4 @@
-function createGrid(grid, element) {
+function createGrid(element, grid) {
   const rows = grid.length;
   const columns = grid[0].length;
 

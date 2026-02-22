@@ -11,7 +11,7 @@ function createBoard({ name, gameBoard: { grid } }) {
   board.dataset.player = name;
   playerName.textContent = name;
 
-  createGrid(grid, playerGrid);
+  createGrid(playerGrid, grid);
 
   return content;
 }
