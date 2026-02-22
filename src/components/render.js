@@ -13,20 +13,19 @@ function renderBoard({ name, gameBoard: { grid } }) {
   const board = document.querySelector(player);
   const cells = board.querySelectorAll(".grid__cell");
 
-  const rows = grid.length;
-  const columns = grid[0].length;
+  cells.forEach((cellDiv) => {
+    const dataCoords = cellDiv.dataset.coords;
 
-  for (let row = 0; row < rows; row++) {
-    for (let column = 0; column < columns; column++) {
-      const cell = grid[row][column];
-      const miss = "m";
-      const hit = "h";
+    const [row, column] = dataCoords.split(",").map(Number);
+    const cell = grid[row][column];
 
-      if (cell instanceof Ship) modifyCell(row, column, cells, "ship");
-      if (cell === miss) modifyCell(row, column, cells, "miss");
-      if (cell === hit) modifyCell(row, column, cells, "hit");
-    }
-  }
+    const miss = "m";
+    const hit = "h";
+
+    if (cell instanceof Ship) modifyCell(cellDiv, dataCoords, "ship");
+    if (cell === miss) modifyCell(cellDiv, dataCoords, "miss");
+    if (cell === hit) modifyCell(cellDiv, dataCoords, "hit");
+  });
 }
 
 export { renderBoard };
