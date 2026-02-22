@@ -1,9 +1,9 @@
 import { Ship } from "../core/ship";
 
-function modifyCell(cell, position, className) {
+function modifyCell(cell, coordinates, className) {
   const dataCoords = cell.dataset.coords;
 
-  if (dataCoords === position) {
+  if (dataCoords === coordinates) {
     cell.classList.add(`grid__cell--${className}`);
   }
 }
