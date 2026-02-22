@@ -8,7 +8,7 @@ function modifyCell(cell, coordinates, className) {
   }
 }
 
-function renderBoard({ name, gameBoard: { grid } }) {
+function renderGrid({ name, gameBoard: { grid } }) {
   const player = `[data-player="${name}"]`;
   const board = document.querySelector(player);
   const cells = board.querySelectorAll(".grid__cell");
@@ -28,4 +28,4 @@ function renderBoard({ name, gameBoard: { grid } }) {
   });
 }
 
-export { renderBoard };
+export { renderGrid };
