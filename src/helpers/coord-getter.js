@@ -1,8 +1,8 @@
-function getCoordinates(element) {
+function getCellCoordinates(element) {
   const dataCoords = element.dataset.coords;
   const coordinates = dataCoords.split(",").map(Number);
 
   return coordinates;
 }
 
-export { getCoordinates };
+export { getCellCoordinates };

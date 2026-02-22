@@ -1,9 +1,9 @@
 import { renderGrid } from "../components/render";
 import { robot } from "../core/player";
-import { getCoordinates } from "../helpers/coord-getter";
+import { getCellCoordinates } from "../helpers/coord-getter";
 
 function handleAttack(event) {
-  const [row, column] = getCoordinates(event);
+  const [row, column] = getCellCoordinates(event);
   robot.gameBoard.receiveAttack(row, column);
   renderGrid(robot);
 }
