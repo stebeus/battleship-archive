@@ -7,7 +7,7 @@ function createGrid(element, grid) {
       const cell = element.querySelector(".grid__cell").cloneNode(true);
 
       const coordinates = `${row},${column}`;
-      cell.dataset.coordinates = coordinates;
+      cell.dataset.coords = coordinates;
 
       element.append(cell);
     }

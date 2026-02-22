@@ -4,7 +4,7 @@ function renderCell(row, column, cells, classModifier) {
   const position = `${row},${column}`;
 
   cells.forEach((cell) => {
-    const coordinates = cell.dataset.coordinates;
+    const coordinates = cell.dataset.coords;
 
     if (coordinates === position) {
       cell.classList.add(`grid__cell--${classModifier}`);
