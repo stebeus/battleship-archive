@@ -20,12 +20,13 @@ function renderGrid({ name, gameBoard: { grid } }) {
     const [row, column] = getCellCoordinates(cellDiv);
     const cell = grid[row][column];
 
-    const miss = "m";
-    const hit = "h";
+    const ship = { className: "ship", condition: cell instanceof Ship };
+    const hit = { className: "hit", condition: cell === "h" };
+    const miss = { className: "miss", condition: cell === "m" };
 
-    if (cell instanceof Ship) modifyCell(cellDiv, dataCoords, "ship");
-    if (cell === miss) modifyCell(cellDiv, dataCoords, "miss");
-    if (cell === hit) modifyCell(cellDiv, dataCoords, "hit");
+    if (ship.condition) modifyCell(cellDiv, dataCoords, ship.className);
+    if (hit.condition) modifyCell(cellDiv, dataCoords, hit.className);
+    if (miss.condition) modifyCell(cellDiv, dataCoords, miss.className);
   });
 }
 
