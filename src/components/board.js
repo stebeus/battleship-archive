@@ -6,12 +6,12 @@ function createBoard({ name, gameBoard: { grid } }) {
 
   const board = content.querySelector(".board");
   const playerName = content.querySelector(".board__player-name");
-  const playerGrid = content.querySelector(".grid");
+  const gridDiv = content.querySelector(".grid");
 
   board.dataset.player = name;
   playerName.textContent = name;
 
-  createGrid(playerGrid, grid);
+  createGrid(gridDiv, grid);
 
   return content;
 }
