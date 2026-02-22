@@ -33,14 +33,11 @@ function renderGrid({ name, gameBoard: { grid } }) {
       new CellStyle("miss", cell === "m"),
     ];
 
-    if (cellStyles[0].condition)
-      modifyCell(cellDiv, dataCoords, cellStyles[0].className);
-
-    if (cellStyles[1].condition)
-      modifyCell(cellDiv, dataCoords, cellStyles[1].className);
-
-    if (cellStyles[2].condition)
-      modifyCell(cellDiv, dataCoords, cellStyles[2].className);
+    for (const cellStyle of cellStyles) {
+      if (cellStyle.condition) {
+        modifyCell(cellDiv, dataCoords, cellStyle.className);
+      }
+    }
   });
 }
 
