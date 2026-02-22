@@ -1,4 +1,5 @@
 import { Ship } from "../core/ship";
+import { getCellCoordinates } from "../helpers/coord-getter";
 
 function modifyCell(cell, coordinates, className) {
   const dataCoords = cell.dataset.coords;
@@ -16,7 +17,7 @@ function renderGrid({ name, gameBoard: { grid } }) {
   cells.forEach((cellDiv) => {
     const dataCoords = cellDiv.dataset.coords;
 
-    const [row, column] = dataCoords.split(",").map(Number);
+    const [row, column] = getCellCoordinates(cellDiv);
     const cell = grid[row][column];
 
     const miss = "m";
