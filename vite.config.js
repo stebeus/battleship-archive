@@ -1,5 +1,5 @@
 export default {
-  base: "/battleship/",
+  base: "/battleship-archive/",
   server: {
     port: 8080,
   },
