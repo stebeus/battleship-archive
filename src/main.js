@@ -16,6 +16,10 @@ main.insertBefore(robotBoard, message);
 human.gameBoard.place(human.gameBoard.fleet[6], 0, 2, "y");
 robot.gameBoard.place(robot.gameBoard.fleet[8], 7, 5, "x");
 
+robot.gameBoard.place(robot.gameBoard.fleet[10], 9, 5, "x");
+
+console.log(robot.gameBoard.grid);
+
 renderGrid(human);
 renderGrid(robot);
 
